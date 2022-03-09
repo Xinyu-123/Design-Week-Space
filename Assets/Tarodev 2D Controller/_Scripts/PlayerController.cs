@@ -44,16 +44,16 @@ namespace TarodevController {
             CalculateGravity(); // Vertical movement
             CalculateJump(); // Possibly overrides vertical
 
-            if(LandingThisFrame == true)
-            {
-                _curlandDelay = _landDelay;
-            }
+            //if(LandingThisFrame == true)
+            //{
+            //    _curlandDelay = _landDelay;
+            //}
 
-            if(_curlandDelay > 0.0f)
-            {
-                _curlandDelay -= Time.deltaTime;
-                return;
-            }
+            //if(_curlandDelay > 0.0f)
+            //{
+            //    _curlandDelay -= Time.deltaTime;
+            //    return;
+            //}
 
             MoveCharacter(); // Actually perform the axis movement
         }
@@ -78,6 +78,7 @@ namespace TarodevController {
 
         [Header("COLLISION")] [SerializeField] private Bounds _characterBounds;
         [SerializeField] private LayerMask _groundLayer;
+        [SerializeField] private LayerMask _ladderLayer;
         [SerializeField] private int _detectorCount = 3;
         [SerializeField] private float _detectionRayLength = 0.1f;
         [SerializeField] [Range(0.1f, 0.3f)] private float _rayBuffer = 0.1f; // Prevents side detectors hitting the ground
@@ -312,5 +313,6 @@ namespace TarodevController {
         }
 
         #endregion
+
     }
 }
