@@ -9,12 +9,12 @@ public class HumanLeverInteract : Interactable
     {
         if(collision.tag.Equals("Player"))
         {
-            interactText.text = "Press E to Pull Human's Lever";
+            interactText.text = "Press E to Interact";
         }
     }
     public override void Interact()
     {
-        // Release the human
+        // Popup the Prisoner Dilema Thing
 
     }
 
