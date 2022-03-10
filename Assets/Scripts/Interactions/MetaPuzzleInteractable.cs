@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ValveInteraction : Interactable
+public class MetaPuzzleInteractable : Interactable
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        interactText.text = "Press E to Fix the Engine";
+        if (collision.tag.Equals("Player"))
+        {
+            interactText.text = "Press E to Access Terminal";
+        }
     }
+
     public override void Interact()
     {
-        EngineFixingController.Instance.StartEngineGame();
+        MetaPuzzleController.Instance.StartPuzzle();
     }
 
     public override void UnInteract()
     {
-        
     }
-
 
 }

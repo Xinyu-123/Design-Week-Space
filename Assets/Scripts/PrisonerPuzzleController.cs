@@ -24,6 +24,8 @@ public class PrisonerPuzzleController : Singleton<PrisonerPuzzleController>
     [SerializeField] private GameObject Alien;
 
     [SerializeField] private GameObject EngineBlocker;
+
+    [SerializeField] private AudioSource leverSound;
     public void StartPrisoners()
     {
         Container.SetActive(true);
@@ -76,7 +78,7 @@ public class PrisonerPuzzleController : Singleton<PrisonerPuzzleController>
         Lever.gameObject.GetComponent<CircleCollider2D>().enabled = false;
         NotificationController.Instance.ShowNotification("The Steam has Evaporated, the Engine can now be accessed", 3.0f);
         EngineBlocker.SetActive(false);
-
+        leverSound.Play();
         ExitMenu();
     }
 
@@ -91,7 +93,7 @@ public class PrisonerPuzzleController : Singleton<PrisonerPuzzleController>
         Lever.gameObject.GetComponent<CircleCollider2D>().enabled = false;
         NotificationController.Instance.ShowNotification("The Steam has Evaporated, the Engine can now be accessed", 3.0f);
         EngineBlocker.SetActive(false);
-
+        leverSound.Play();
         ExitMenu();
 
     }
