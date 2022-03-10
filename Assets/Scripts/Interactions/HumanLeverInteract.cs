@@ -15,7 +15,7 @@ public class HumanLeverInteract : Interactable
     public override void Interact()
     {
         // Popup the Prisoner Dilema Thing
-
+        PrisonerPuzzleController.Instance.StartPrisoners();
     }
 
     public override void UnInteract()

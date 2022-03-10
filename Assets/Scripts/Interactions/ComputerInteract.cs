@@ -17,15 +17,12 @@ public class ComputerInteract : Interactable
     }
     public override void Interact()
     {
-        computerUI.SetActive(true);
-        playerController.enabled = false;
+        ComputerController.Instance.StartComputer();
     }
 
     public override void UnInteract()
     {
-        computerUI.SetActive(false);
-        playerController.enabled = true;
-
+        
     }
 
 }
